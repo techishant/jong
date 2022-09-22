@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import entity.Ball;
 import entity.Player;
+import ui.UI;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -21,8 +22,8 @@ public class GamePanel extends JPanel implements Runnable{
     public int recFPS;
     
     public int score = 0;
-    public Player player1 = new Player(this, 100, 545, 120, 25, 6, keyH);
-    Ball ball = new Ball(this, screenWidth/2, screenHeight/2, 25, 25, 5, keyH);
+    public Player player1 = new Player(this, 00, 545, 120, 25, 6, keyH);
+    Ball ball = new Ball(this, 00, 00, 25, 25, 5, keyH);
     
     /**
      * <ul>

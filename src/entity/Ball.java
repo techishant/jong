@@ -20,8 +20,8 @@ public class Ball extends Entity {
         this.gp = gp;
         this.keyH = keyH;
 
-        defaultData[0] = x;
-        defaultData[1] = y;
+        defaultData[0] = gp.screenWidth/2 - width/2;
+        defaultData[1] = gp.screenHeight/2 - height/2;
         defaultData[2] = width;
         defaultData[3] = height;
         defaultData[4] = speed;
