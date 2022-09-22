@@ -25,11 +25,13 @@ public class Ball extends Entity {
         defaultData[2] = width;
         defaultData[3] = height;
         defaultData[4] = speed;
+        defaultData[5] = width;
+        defaultData[6] = height;
 
         reset();
         
         collision = true;
-        solidArea = new Rectangle(x,y, width, height);
+        solidArea = new Rectangle(defaultData[0], defaultData[1], defaultData[5], defaultData[6]);
     }
 
     public void reset(){

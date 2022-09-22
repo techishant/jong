@@ -22,12 +22,17 @@ public class Player extends Entity{
         defaultData[2] = width;
         defaultData[3] = height;
         defaultData[4] = speed;
+        defaultData[5] = width;
+        defaultData[6] = 1;
+
 
         reset();
 
         collision = true;
-        solidArea = new Rectangle(0, y, width, 1);
+        solidArea = new Rectangle(defaultData[0], defaultData[1], defaultData[5], defaultData[6]);
     }
+    
+    
 
     public void update(){
         if (keyH.leftPressed){
@@ -53,5 +58,4 @@ public class Player extends Entity{
         g2.setColor(Color.white);
         g2.fillRect(x, y, width, height);
     }
-
 }
