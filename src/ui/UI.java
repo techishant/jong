@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 
 
 import main.GamePanel;
-import util.Font$;;
+import util.Font$;
 
 public class UI {
     GamePanel gp;
