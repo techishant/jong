@@ -1,7 +1,7 @@
 package res;
 
 public class res {
-    public static void main(String[] args) {
+    void details() {
         System.out.println("res");
     }
 }
