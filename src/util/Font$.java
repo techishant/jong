@@ -58,6 +58,6 @@ public class Font$ {
         }
         
 
-        g2.drawString(text, x2, y);
+        g2.drawString(text, x2, y2);
     }
 }
