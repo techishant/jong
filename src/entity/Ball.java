@@ -58,11 +58,13 @@ public class Ball extends Entity {
             speedX = (speedX<0) ? speedX - 0.2F: speedX + 0.2F;
         }
         if (y >= gp.screenHeight-height){
+            gp.gameState = -999;
+        }
+        if (gp.gameState == -999){
             speedX=0;
             speedY=0;
-            x = gp.screenWidth/2 - width;
+            x = gp.screenWidth/2 - width/2;
             y = gp.screenHeight/2;
-            gp.gameState = -999;
         }
 
         x += speedX;

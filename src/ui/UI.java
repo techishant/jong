@@ -26,21 +26,17 @@ public class UI {
         score = "" + gp.score;
     }
 
-    Color faintBg = new Color(1.0f, 0.733f, 0.0f, 0.925f);
-
 
     public void draw(Graphics2D g2){
         g2.setColor(Color.white);
         switch (gp.gameState) {
             case -999:
-                font.drawFont("GAME OVER", gp.screenWidth/2, gp.screenHeight/2, arial_40, 90,false, g2);
+                font.drawFont("GAME OVER", gp.screenWidth/2, gp.screenHeight/2 - 10, arial_40, 80,false, g2);
                 g2.setFont(consolas_20);
-                font.drawFont("Press any key to restart.", gp.screenWidth/2, gp.screenHeight/2, consolas_20, 20,false, g2);
-                font.drawFont("Press 'q' to exit.", gp.screenWidth/2, gp.screenHeight/2, consolas_20, 20,false, g2);
+                font.drawFont("Press any key to restart", gp.screenWidth/2, gp.screenHeight/2 + 50, consolas_20, 20,false, g2);
+                font.drawFont("Press 'q' to exit", gp.screenWidth/2, gp.screenHeight/2 + 90, consolas_20, 20,false, g2);
                 break;
             case -1:
-                g2.setColor(faintBg);
-                g2.fillRect(gp.screenWidth/2 - 150, gp.screenHeight/2 - 50, 300, 100);
                 g2.setColor(Color.WHITE);
                 font.drawFont("Paused", gp.screenWidth/2, gp.screenHeight/2, arial_40, 55, false, g2);
                 break;

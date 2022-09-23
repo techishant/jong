@@ -52,6 +52,12 @@ public class Player extends Entity{
             this.x = 0;
             this.solidArea.x = this.x;
         }
+
+
+        if (gp.gameState == -999){
+            x = gp.screenWidth/2 - width/2;
+            speed = 0;
+        }
     }
 
     public void draw(Graphics g2){
