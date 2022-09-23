@@ -10,12 +10,14 @@ public class Entity {
      * <li>width</li>
      * <li>height</li>
      * <li>speed</li>
+     * <li>collisionX</li>
+     * <li>collisionY</li>
      * <li>collisionWidth</li>
      * <li>collisionHeight</li>
      * </ol> 
-     * x, y, width, height, speed, collisionWidth, collisionHeight
+     * x, y, width, height, speed,collisionX,collisionY, collisionWidth, collisionHeight
      */
-    int[] defaultData = new int[7];
+    int[] defaultData = new int[9];
     int x, y;
     int height,width;
     float speed;
@@ -30,7 +32,7 @@ public class Entity {
         this.height = defaultData[3];
         this.speed = defaultData[4];
         if (collision == true){
-        solidArea = new Rectangle(defaultData[0], defaultData[1], defaultData[5], defaultData[6]);
+        solidArea = new Rectangle(defaultData[5], defaultData[6], defaultData[7], defaultData[8]);
         }
     }
 }

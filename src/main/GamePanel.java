@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements Runnable{
     public int recFPS;
     
     public int score = 0;
-    public Player player1 = new Player(this, 00, 545, 120, 25, 6, keyH);
+    public Player player1 = new Player(this, 00, screenHeight-48*2, 48*2, 48*2, 6, keyH);
     Ball ball = new Ball(this, 00, 00, 25, 25, 5, keyH);
     
     /**
