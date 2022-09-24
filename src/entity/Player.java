@@ -16,6 +16,10 @@ public class Player extends Entity{
     KeyHandler keyH = null;
     GamePanel gp = null;
     BufferedImage p1 = null;
+    BufferedImage p2 = null;
+    int imageCount = 1;
+    BufferedImage image = null;
+    int animTime;
 
     
 
@@ -43,20 +47,22 @@ public class Player extends Entity{
     
     public void loadImages(){
         try{
-            p1 = ImageIO.read(getClass().getResourceAsStream("/res/blue1.png"));
-
+            p1 = ImageIO.read(getClass().getResourceAsStream("/res/blue2.png"));
+            p2 = ImageIO.read(getClass().getResourceAsStream("/res/blue1.png"));
+            image = p1; 
         }catch(IOException e){
             e.printStackTrace();
         }
     }
+    
 
     public void update(){
         if (keyH.leftPressed){
-            this.x -= this.speed;
+            this.x -= this.speed * gp.dt;
             this.solidArea.x = this.x;
         }
         if (keyH.rightPressed){
-            this.x += this.speed;
+            this.x += this.speed * gp.dt;
             this.solidArea.x = this.x;
         }
         
@@ -74,12 +80,23 @@ public class Player extends Entity{
             x = gp.screenWidth/2 - width/2;
             speed = 0;
         }
+
+        if (gp.ball.solidArea.intersects(solidArea) || animTime > 0){
+            animTime++;
+            image = p2;
+            if (animTime > 10){
+                animTime = 0;
+            }
+        }else{
+            image = p1;
+        }
+        
     }
 
     public void draw(Graphics2D g2){
         g2.setColor(Color.white);
         // g2.fillRect(x, y, width, height);
-        g2.drawImage(p1, x, y,width, height, null);
+        g2.drawImage(image, x, y,width, height, null);
         // g2.drawRect(solidArea.x, solidArea.y, solidArea.width, solidArea.height);
     }
 }

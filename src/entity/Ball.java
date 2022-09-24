@@ -69,8 +69,8 @@ public class Ball extends Entity {
             y = gp.screenHeight/2;
         }
 
-        x += speedX;
-        y += speedY;
+        x += speedX * gp.dt;
+        y += speedY * gp.dt;
         this.solidArea.x = x;
         this.solidArea.y = y;
 

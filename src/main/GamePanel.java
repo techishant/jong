@@ -13,6 +13,7 @@ import java.awt.Color;
 
 
 public class GamePanel extends JPanel implements Runnable{
+    public double dt = 0;
     Thread gameThread;
     int FPS = 60;
     public final int screenWidth = 768; //768px
@@ -22,8 +23,8 @@ public class GamePanel extends JPanel implements Runnable{
     public int recFPS;
     
     public int score = 0;
-    public Player player1 = new Player(this, 00, screenHeight-48*2, 48*2, 48*2, 6, keyH);
-    Ball ball = new Ball(this, 00, 00, 25, 25, 5, keyH);
+    public Player player1 = new Player(this, 00, screenHeight-48*2 + 10, 48*2, 48*2, 6, keyH);
+    public Ball ball = new Ball(this, 00, 00, 25, 25, 5, keyH);
     
     /**
      * <ul>
@@ -55,7 +56,6 @@ public class GamePanel extends JPanel implements Runnable{
     @Override
     public void run() {
         double drawInterval = 1000000000/FPS; //0.016666s
-        double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
@@ -64,14 +64,14 @@ public class GamePanel extends JPanel implements Runnable{
         while(gameThread != null){
 
             currentTime = System.nanoTime();
-            delta += (currentTime - lastTime)/drawInterval;
+            dt += (currentTime - lastTime)/drawInterval;
             timer += (currentTime - lastTime);
             lastTime = currentTime;
 
-            if(delta >= 1){
+            if(dt >= 1){
                 update();
                 repaint();
-                delta--;
+                dt--;
                 drawCount++;
             }
 
